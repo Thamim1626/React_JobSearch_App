@@ -4,6 +4,7 @@ import Login from './Components/Login'
 import Jobs from './Components/Jobs'
 import ProdectRoute from './Components/ProdectRoute'
 import NotFound from './Components/NotFound'
+import JobItemDetails from './Components/JobItemDetails'
 
 import './App.css'
 
@@ -51,10 +52,18 @@ const App = () => (
   <Switch>
     <Route exact path="/login" component={Login} />
     <ProdectRoute exact path="/" component={Home} />
-    <ProdectRoute exact path="/jobs" component={Jobs} />
-
-    <Redirect to="/not-found" />
-    <Route path="/not-found" component={NotFound} />
+    <ProdectRoute
+      exact
+      path="/jobs"
+      render={props => (
+        <Jobs
+          employmentTypesList={employmentTypesList}
+          salaryRangesList={salaryRangesList}
+        />
+      )}
+    />
+    <ProdectRoute exact path="/jobs/:id" component={JobItemDetails} />
+    <ProdectRoute component={NotFound} />
   </Switch>
 )
 

@@ -36,7 +36,7 @@ class Login extends Component {
       this.setState({isError: true, errorMsg: datas.error_msg})
     }
     if (response.ok) {
-      Cookies.set('jwt_token', datas.jwt_token)
+      Cookies.set('jwt_token', datas.jwt_token, {expires: 7})
       history.replace('/')
     }
   }
@@ -64,22 +64,24 @@ class Login extends Component {
               className="login-input"
               placeholder="Username"
               value={username}
+              id="username"
               onChange={this.onChangeLoginUserInput}
             />
             <label htmlFor="password" className="login-label">
               PASSWORD
             </label>
             <input
-              type="password"
+              type="PASSWORD"
               className="login-input"
               placeholder="Password"
               value={password}
+              id="password"
               onChange={this.onChangeLoginPasswordInput}
             />
             <button className="login-button" type="submit">
               Login
             </button>
-            {isError && <p className="error-msg">* {errorMsg}</p>}
+            {isError && <p className="error-msg">{errorMsg}</p>}
           </form>
         </div>
       </div>

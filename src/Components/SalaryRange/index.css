@@ -1,0 +1,14 @@
+.salary-range-item {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.ratio-input {
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+}
+.radio-label {
+  color: white;
+}

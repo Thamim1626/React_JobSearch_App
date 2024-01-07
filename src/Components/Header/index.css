@@ -1,7 +1,7 @@
 .header-main {
   background-color: #272727;
   width: 100%;
-  padding: 8px;
+  padding: 6px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,9 +48,7 @@
   .header-logo {
     width: 200px;
   }
-  .header-main {
-    padding: 12px;
-  }
+
   .header-mid {
     display: flex;
   }

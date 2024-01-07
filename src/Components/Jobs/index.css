@@ -1,0 +1,183 @@
+.jobs-main {
+  width: 100%;
+}
+.job-body {
+  background-color: black;
+  width: 100%;
+  padding: 8px;
+}
+
+.job-left {
+  width: 100%;
+  padding: 8px;
+}
+
+.job-right {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+}
+.loader-job {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .job-body {
+    display: flex;
+  }
+  .job-left {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .job-right {
+    width: 100%;
+    margin-top: 0px;
+  }
+}
+
+.profile-card {
+  width: 100%;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-size: cover;
+  border-radius: 12px;
+  padding: 16px;
+}
+.profile-card-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 210px;
+  width: 100%;
+  background-size: cover;
+  border-radius: 20px;
+}
+.profile-card-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.profile-name {
+  margin-top: 12px;
+}
+.profile-role {
+  margin-top: 12px;
+}
+
+.profile-retry-button {
+  color: black;
+  background-color: aquamarine;
+  width: 130px;
+  height: 30px;
+  outline: none;
+  border: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.type-heading {
+  color: white;
+  margin-top: 12px;
+  font-size: 22px;
+}
+
+.job-type-list {
+  list-style: none;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.search-section {
+  width: 100%;
+  max-width: 600px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 6px;
+  margin-bottom: 12px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 80%;
+  max-width: 550px;
+  height: 30px;
+  background-color: transparent;
+  color: grey;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+.search-icon {
+  color: grey;
+  width: 30px;
+  height: 30px;
+  font-weight: 400;
+}
+
+.search-input-lg {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .search-input-lg {
+    display: flex;
+  }
+  .search-input-sm {
+    display: none;
+  }
+}
+.job-list-contanier {
+  padding: 0px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .job-list-contanier {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 80vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+}
+
+.loader-job {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.failure-image {
+  width: 70%;
+  height: 70%;
+}
+
+/* For WebKit Browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: black; /* color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* color of the thumb */
+  border-radius: 5px; /* rounded corners of the thumb */
+}

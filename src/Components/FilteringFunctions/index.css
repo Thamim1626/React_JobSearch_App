@@ -1,0 +1,12 @@
+.job-type-item {
+  margin-bottom: 8px;
+}
+
+.type-check {
+  height: 15px;
+  width: 15px;
+  margin-right: 4px;
+}
+.type-check-label {
+  color: white;
+}
