@@ -76,13 +76,18 @@ class JobItemDetails extends Component {
               <p className="lpa">{lpa}</p>
             </div>
           </div>
+          <div className="url">
+            <h3 className="job-des-heading">Description</h3>
+            <a href={companyWebUrl} className="nav-link">
+              Visit
+            </a>
+          </div>
 
-          <h3 className="job-des-heading">Description</h3>
           <p className="job-des">{jobDesc}</p>
           <h1 className="job-des-heading">Skills</h1>
-          <div className="skill-section">
+          <ul className="skill-section">
             {skills.map(eachItem => (
-              <div className="skill-card">
+              <li key={eachItem.name} className="skill-card">
                 <img
                   src={eachItem.imageUrl}
                   className="skill-icon"
@@ -90,9 +95,9 @@ class JobItemDetails extends Component {
                 />
 
                 <p className="skill-name">{eachItem.name}</p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
           <h3 className="job-des-heading">Life At Company</h3>
           <div className="life-company-card">
             <p className="about-company">{description} </p>
@@ -156,6 +161,7 @@ class JobItemDetails extends Component {
       similarJobs: data.similar_jobs,
     }
     const {jobDetails, similarJobs} = levelOneCaseChange
+    console.log(jobDetails)
     const jobItemLists = {
       companyLogo: jobDetails.company_logo_url,
       companyWebUrl: jobDetails.company_website_url,
@@ -208,7 +214,7 @@ class JobItemDetails extends Component {
   }
 
   renderInitial = () => (
-    <div className="job-item-detail-inital">
+    <div className="job-item-detail-inital" data-testid="loader">
       <Loader type="Grid" data-testid="loader" color="pink" height="100px" />
     </div>
   )

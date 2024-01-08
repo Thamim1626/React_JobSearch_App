@@ -181,6 +181,7 @@ class Jobs extends Component {
   rendeFilterSection = () => {
     const {employmentTypesList, salaryRangesList} = this.props
     const {searchInput} = this.state
+    console.log(employmentTypesList)
     return (
       <div className="job-left">
         <div className="search-section search-input-sm">
@@ -190,39 +191,45 @@ class Jobs extends Component {
             className="search-input"
             onChange={this.onChangeSearchInput}
             placeholder="Search"
-            aria-label="Search"
-            id="searchInput"
+            id="search"
           />
-
-          <IoIosSearch
-            data-testid="searchButton"
-            onClick={this.onChangeSearchInput}
-            className="search-icon"
-          />
+          <label htmlFor="search">
+            <IoIosSearch
+              data-testid="searchButton"
+              type="button"
+              onClick={this.onChangeSearchInput}
+              className="search-icon"
+            />
+          </label>
         </div>
 
         {this.profileStatusSwitch()}
         <div className="job-type">
           <h1 className="type-heading">Type of Employment</h1>
-          <ul className="job-type-list">
-            {employmentTypesList.map(eachItem => (
-              <FilteringFunction
-                eachItem={eachItem}
-                key={eachItem.employmentTypeId}
-                CheckItemAddFucnction={this.CheckItemAddFucnction}
-              />
-            ))}
-          </ul>
+          <nav>
+            <ul>
+              <li className="job-type-list">
+                {employmentTypesList.map((eachItem, index) => (
+                  <FilteringFunction
+                    eachItem={eachItem}
+                    key={eachItem.employmentTypeId}
+                    CheckItemAddFucnction={this.CheckItemAddFucnction}
+                  />
+                ))}
+              </li>
+              <li className="job-type-list">
+                {salaryRangesList.map(eachItem => (
+                  <SalaryRange
+                    eachItem={eachItem}
+                    key={eachItem.SalaryRangeId}
+                    onChangeSalaryRange={this.onChangeSalaryRange}
+                  />
+                ))}
+              </li>
+            </ul>
+          </nav>
+
           <h1 className="type-heading">Salary Range</h1>
-          <ul className="job-type-list">
-            {salaryRangesList.map(eachItem => (
-              <SalaryRange
-                eachItem={eachItem}
-                key={eachItem.SalaryRangeId}
-                onChangeSalaryRange={this.onChangeSalaryRange}
-              />
-            ))}
-          </ul>
         </div>
       </div>
     )
@@ -257,7 +264,7 @@ class Jobs extends Component {
     <div className="loader-job">
       <img
         src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
-        alt="No Job"
+        alt="no jobs"
         className="failure-image"
       />
       <h1>No Jobs Found</h1>
@@ -273,7 +280,8 @@ class Jobs extends Component {
         className="failure-image"
       />
       <h1>Oops! Something Went Wrong</h1>
-      <p>We cannot seem to find the page you are looking for</p>
+      <p>We could not find any jobs. Try other filters</p>
+      <button type="button">Retry</button>
     </div>
   )
 
@@ -305,10 +313,12 @@ class Jobs extends Component {
             onChange={this.onChangeSearchInput}
             placeholder="Search"
           />
-          <IoIosSearch
-            onClick={this.onChangeSearchInput}
-            className="search-icon"
-          />
+          <label htmlFor="search">
+            <IoIosSearch
+              onClick={this.onChangeSearchInput}
+              className="search-icon"
+            />
+          </label>
         </div>
         {this.renderJobList()}
       </div>

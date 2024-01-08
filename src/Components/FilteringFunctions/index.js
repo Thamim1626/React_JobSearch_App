@@ -7,7 +7,7 @@ const FilteringFunction = props => {
     CheckItemAddFucnction(employmentTypeId)
   }
   return (
-    <li className="job-type-item">
+    <div className="job-type-item">
       <input
         type="checkbox"
         className="type-check"
@@ -17,7 +17,7 @@ const FilteringFunction = props => {
       <label className="type-check-label" htmlFor={employmentTypeId}>
         {label}
       </label>
-    </li>
+    </div>
   )
 }
 

@@ -8,7 +8,7 @@ const SalaryRange = props => {
   }
 
   return (
-    <li className="salary-range-item">
+    <div className="salary-range-item">
       <input
         name="range"
         type="radio"
@@ -20,7 +20,7 @@ const SalaryRange = props => {
       <label htmlFor={salaryRangeId} className="radio-label">
         {label}
       </label>
-    </li>
+    </div>
   )
 }
 

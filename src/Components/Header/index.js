@@ -9,9 +9,8 @@ import './index.css'
 const Header = props => {
   const {history} = props
   const onClickLogout = () => {
-    Cookies.remove('jwt_token')
-
     history.replace('/login')
+    Cookies.remove('jwt_token')
   }
   return (
     <div className="header-main">
@@ -24,12 +23,12 @@ const Header = props => {
         />
       </Link>
       <ul className="header-mid">
-        <li className="header-mid-item">
+        <li className="header-mid-item text-header">
           <Link to="/" className="nav-link">
             Home
           </Link>
         </li>
-        <li className="header-mid-item">
+        <li className="header-mid-item text-header">
           <Link to="/jobs" className="nav-link">
             Jobs
           </Link>
@@ -39,7 +38,7 @@ const Header = props => {
         <li className="header-mid-item">
           <Link to="/" className="nav-link">
             <AiFillHome
-              style={{height: '40px', width: '40px', color: 'white'}}
+              style={{height: '30px', width: '30px', color: 'white'}}
               className="header-sm-icons"
             />
           </Link>
@@ -47,7 +46,7 @@ const Header = props => {
         <li className="header-mid-item">
           <Link to="/jobs" className="nav-link">
             <AiFillAlert
-              style={{height: '40px', width: '40px', color: 'white'}}
+              style={{height: '30px', width: '30px', color: 'white'}}
               className="header-sm-icons"
             />
           </Link>

@@ -1,8 +1,8 @@
-import {Switch, Redirect, Route} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 import Home from './Components/Home'
 import Login from './Components/Login'
 import Jobs from './Components/Jobs'
-import ProdectRoute from './Components/ProdectRoute'
+import ProtectedRoute from './Components/ProtectedRoute'
 import NotFound from './Components/NotFound'
 import JobItemDetails from './Components/JobItemDetails'
 
@@ -51,19 +51,20 @@ const salaryRangesList = [
 const App = () => (
   <Switch>
     <Route exact path="/login" component={Login} />
-    <ProdectRoute exact path="/" component={Home} />
-    <ProdectRoute
+    <ProtectedRoute exact path="/" component={Home} />
+    <ProtectedRoute
       exact
       path="/jobs"
-      render={props => (
+      render={() => (
         <Jobs
           employmentTypesList={employmentTypesList}
           salaryRangesList={salaryRangesList}
         />
       )}
     />
-    <ProdectRoute exact path="/jobs/:id" component={JobItemDetails} />
-    <ProdectRoute component={NotFound} />
+    <ProtectedRoute exact path="/jobs/:id" component={JobItemDetails} />
+    <Route exact path="/not-found" component={NotFound} />
+    <Redirect to="not-found" />
   </Switch>
 )
 

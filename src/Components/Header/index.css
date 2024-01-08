@@ -20,10 +20,10 @@
 }
 
 .header-end-sm {
-  width: 200px;
+  width: 160px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   list-style: none;
 }
 
